@@ -1,22 +1,24 @@
 import React, { Fragment } from "react";
 
-import { Route, Switch } from "react-router-dom";
-
+import { BrowserRouter, Route } from "react-router-dom";
+import { QueryClient } from "react-query";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
 import Login from "./page/Login";
 
-function App() {
+export default function App() {
+  const queryClient = new QueryClient();
+
   return (
-    <Fragment>
-      <GlobalStyle />
-      <Route path="/" component={Login} exact />
-    </Fragment>
+    <BrowserRouter>
+      <GlobalStyle>
+        {/* <QueryClientProvider client={queryClient} /> */}
+        <Route path="/login" component={Login} exact />
+      </GlobalStyle>
+    </BrowserRouter>
   );
 }
-
-export default App;
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
