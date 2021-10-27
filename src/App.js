@@ -14,7 +14,7 @@ export default function App() {
     <BrowserRouter>
       <GlobalStyle>
         {/* <QueryClientProvider client={queryClient} /> */}
-        <Route path="/login" component={Login} exact />
+        <Route path="/" component={Login} exact />
       </GlobalStyle>
     </BrowserRouter>
   );
